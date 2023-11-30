@@ -64,8 +64,8 @@ function displayQRCode(qrText) {
 
     const qrcode = new QRCode(resultContainer, {
         text: qrText,
-        width: 440,
-        height: 440,
+        width: 300,
+        height: 300,
         colorDark: "#b1f202", // Set the dark color to #b1f202
         colorLight: "#fff",   // Set the light color to #fff
     });
