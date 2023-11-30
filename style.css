@@ -1,0 +1,233 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff;
+    opacity: 1;
+    background-image: radial-gradient(#b1f202 0.8500000000000001px, transparent 0.8500000000000001px),
+        radial-gradient(#b1f202 0.8500000000000001px, #fff 0.8500000000000001px);
+    background-size: 34px 34px;
+    background-position: 0 0, 17px 17px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    transition: ease-in 1s;
+}
+
+.generator {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(110, 242, 2, 0.5);
+    width: 90%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.Btn {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b1f202;
+    font-weight: 600;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    color: #000;
+    padding: 10px;
+    border: 2px solid #b1f202;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px; /* Added margin to separate buttons */
+}
+
+.Btn.download {
+    background-color: #3498db;
+    border-color: #3498db;
+    margin-top: 10px;
+}
+
+.Btn:hover::before,
+.Btn.download:hover::before {
+    transition-duration: .5s;
+    transform: translate(100%, -50%);
+    border-radius: 0;
+}
+
+.Btn:active,
+.Btn.download:active {
+    transform: translate(5px, 5px);
+    transition-duration: .3s;
+}
+
+h1 {
+    text-align: center;
+    color: #b1f202;
+}
+
+.result-area {
+    margin-left: 0;
+    margin-top: 20px;
+    flex-shrink: 0;
+    width: 90%;
+    max-width: 480px;
+    box-shadow: 0 0 20px rgba(110, 242, 2, 0.5);
+    border-radius: 10px;
+}
+
+#qrcode {
+    text-align: center;
+    padding: 20px;
+}
+
+.coolinput {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 480px;
+    position: static;
+    margin-bottom: 20px;
+}
+
+.coolinput label.text {
+    font-size: 16px;
+    color: #b1f202;
+    font-weight: 600;
+    position: relative;
+    top: 0.5rem;
+    margin: 0 0 0 7px;
+    padding: 0 3px;
+    background: #fff;
+}
+
+.coolinput input[type=text].input,
+.coolinput input[type=number].input {
+    padding: 10px;
+    font-size: 0.75rem;
+    border: 2px #b1f202 solid;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.coolinput input[type=text].input:focus,
+.coolinput input[type=number].input:focus {
+    outline: none;
+}
+
+.toggle-button-cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.button.r {
+    position: relative;
+    top: 50%;
+    width: 74px;
+    height: 36px;
+    margin: -20px auto 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    padding-left: 1px;
+    padding-right: 1px;
+    box-shadow: inset 0px 0px 8px #8bf436;
+}
+
+.checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.knobs {
+    z-index: 2;
+}
+
+.layer {
+    width: 100%;
+    background-color: #b1f202;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+.button.r .layer {
+    border-radius: 100px;
+}
+
+#button-3 .knobs:before {
+    content: "VPA";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 10px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #b1f202;
+    border-radius: 50%;
+    transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+}
+
+#button-3 .checkbox:active + .knobs:before {
+    width: 46px;
+    border-radius: 100px;
+}
+
+#button-3 .checkbox:checked:active + .knobs:before {
+    margin-left: -26px;
+}
+
+#button-3 .checkbox:checked + .knobs:before {
+    content: "AC";
+    left: 42px;
+    background-color: #f44336;
+}
+
+#button-3 .checkbox:checked ~ .layer {
+    background-color: #fcebeb;
+}
+
+#acInputs {
+    display: none;
+}
