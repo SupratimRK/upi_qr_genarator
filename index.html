@@ -38,24 +38,140 @@
 
             <!-- AC Number, IFSC, and Amount Input Fields (Initially Hidden) -->
             <div class="input-container coolinput" id="acInputs" style="display: none;">
+                <label for="bankSelect" class="text">Select Bank:</label>
+                <select id="bankSelect" class="input">
+                    <!-- Bank options will be dynamically added using JavaScript -->
+                </select>
                 <label for="acNumber" class="text">AC Number:</label>
                 <input type="text" id="acNumber" placeholder="Enter AC Number" class="input">
-                <label for="ifsc" class="text">IFSC Code:</label>
-                <input type="text" id="ifsc" placeholder="Enter IFSC Code" class="input">
                 <label for="acAmount" class="text">Amount (optional):</label>
                 <input type="number" id="acAmount" min="0" step="0.01" placeholder="Enter amount" class="input">
             </div>
 
             <!-- Generate QR Code Button -->
             <button class="Btn" onclick="generateQRCode()">Generate QR Code
-                <svg fill="#fff" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" width="16px" height="16px"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M0,0v233.739h233.739V0H0z M200.348,200.348H33.391V33.391h166.957V200.348z"></path> </g> </g> <g> <g> <rect x="66.783" y="66.783" width="100.174" height="100.174"></rect> </g> </g> <g> <g> <path d="M278.261,0v233.739H512V0H278.261z M478.609,200.348H311.652V33.391h166.957V200.348z"></path> </g> </g> <g> <g> <rect x="345.043" y="66.783" width="100.174" height="100.174"></rect> </g> </g> <g> <g> <path d="M0,278.261V512h233.739V278.261H0z M200.348,478.609H33.391V311.652h166.957V478.609z"></path> </g> </g> <g> <g> <rect x="66.783" y="345.043" width="100.174" height="100.174"></rect> </g> </g> <g> <g> <polygon points="345.043,311.652 345.043,278.261 278.261,278.261 278.261,512 345.043,512 345.043,478.609 311.652,478.609 311.652,411.826 345.043,411.826 345.043,378.435 311.652,378.435 311.652,311.652 "></polygon> </g> </g> <g> <g> <rect x="478.609" y="278.261" width="33.391" height="33.391"></rect> </g> </g> <g> <g> <polygon points="478.609,356.174 478.609,478.609 445.217,478.609 445.217,512 512,512 512,356.174 "></polygon> </g> </g> <g> <g> <rect x="378.435" y="278.261" width="66.783" height="33.391"></rect> </g> </g> <g> <g> <polygon points="445.217,378.435 445.217,345.043 378.435,345.043 378.435,445.217 445.217,445.217 445.217,411.826 411.826,411.826 411.826,378.435 "></polygon> </g> </g> <g> <g> <rect x="378.435" y="478.609" width="33.391" height="33.391"></rect> </g> </g> </g></svg>
+                <svg fill="#fff" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" width="16px"
+                    height="16px">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <g>
+                            <g>
+                                <path d="M0,0v233.739h233.739V0H0z M200.348,200.348H33.391V33.391h166.957V200.348z">
+                                </path>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <rect x="66.783" y="66.783" width="100.174" height="100.174"></rect>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <path
+                                    d="M278.261,0v233.739H512V0H278.261z M478.609,200.348H311.652V33.391h166.957V200.348z">
+                                </path>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <rect x="345.043" y="66.783" width="100.174" height="100.174"></rect>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <path
+                                    d="M0,278.261V512h233.739V278.261H0z M200.348,478.609H33.391V311.652h166.957V478.609z">
+                                </path>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <rect x="66.783" y="345.043" width="100.174" height="100.174"></rect>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <polygon
+                                    points="345.043,311.652 345.043,278.261 278.261,278.261 278.261,512 345.043,512 345.043,478.609 311.652,478.609 311.652,411.826 345.043,411.826 345.043,378.435 311.652,378.435 311.652,311.652 ">
+                                </polygon>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <rect x="478.609" y="278.261" width="33.391" height="33.391"></rect>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <polygon
+                                    points="478.609,356.174 478.609,478.609 445.217,478.609 445.217,512 512,512 512,356.174 ">
+                                </polygon>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <rect x="378.435" y="278.261" width="66.783" height="33.391"></rect>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <polygon
+                                    points="445.217,378.435 445.217,345.043 378.435,345.043 378.435,445.217 445.217,445.217 445.217,411.826 411.826,411.826 411.826,378.435 ">
+                                </polygon>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <rect x="378.435" y="478.609" width="33.391" height="33.391"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
             </button>
 
             <!-- Download QR Code Button -->
             <button class="Btn" onclick="downloadQRCode()">Download QR Code
-                <svg fill="#fff" class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z">
-                </path></svg>
+                <svg fill="#fff" class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z">
+                    </path>
+                </svg>
             </button>
+
+            <!-- Add this button after the Download QR Code button -->
+            <button class="Btn" onclick="makePayment()">
+                Direct Payment
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                    height="44" viewBox="0 0 128 128" xml:space="preserve">
+                    <defs>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="transparent"></rect>
+                    <g transform="matrix(1 0 0 1 64 64)" id="05528206-35bc-46ad-9711-5262db53a693">
+                        <rect
+                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;"
+                            vector-effect="non-scaling-stroke" x="-64" y="-64" rx="0" ry="0" width="128" height="128" />
+                    </g>
+                    <g transform="matrix(Infinity NaN NaN Infinity 0 0)" id="1f23c846-1fd3-4704-9e7a-baa91e0338b8">
+                    </g>
+                    <g transform="matrix(5.33 0 0 5.33 68.77 64)">
+                        <path
+                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+                            vector-effect="non-scaling-stroke" transform=" translate(-12.89, -12)"
+                            d="M 10.16 17 L 12.995000000000001 7 L 15.625 11.985 z" stroke-linecap="round" />
+                    </g>
+                    <g transform="matrix(5.33 0 0 5.33 59.23 64)">
+                        <path
+                            style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
+                            vector-effect="non-scaling-stroke" transform=" translate(-11.11, -12)"
+                            d="M 8.375 17 L 11.21 7 L 13.84 11.985 z" stroke-linecap="round" />
+                    </g>
+                </svg>
+            </button>
+
+
+
         </div>
 
         <!-- Result Area -->
@@ -69,6 +185,22 @@
     <script>
         // JavaScript functions (including toggleInputsVisibility)
         // ...
+
+        // Function to populate bank options in the dropdown
+        function populateBanks() {
+            const bankSelect = document.getElementById('bankSelect');
+            banks.forEach(([bankName, ifsc]) => {
+                const option = document.createElement('option');
+                option.value = ifsc;
+                option.text = bankName;
+                bankSelect.add(option);
+            });
+        }
+
+        // Call populateBanks on page load to set initial state
+        populateBanks();
+        // ...
+
 
         // Function to handle QR code download
         function downloadQRCode() {
@@ -86,6 +218,7 @@
                 downloadLink.href = canvas.toDataURL('image/png');
                 downloadLink.download = 'qr_code.png';
                 downloadLink.click();
+                alert('Download initiated!');
             } else {
                 alert('Please generate a QR code first.');
             }

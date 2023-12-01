@@ -8,8 +8,8 @@ body {
     min-height: 100vh;
     background-color: #FFFFFF;
     opacity: 1;
-    background-image: radial-gradient(#6750A4 0.8500000000000001px, transparent 0.8500000000000001px),
-        radial-gradient(#6750A4 0.8500000000000001px, #FFFFFF 0.8500000000000001px);
+    background-image: radial-gradient(#6750A4 0.85px, transparent 0.85px),
+        radial-gradient(#6750A4 0.85px, #FFFFFF 0.85px);
     background-size: 34px 34px;
     background-position: 0 0, 17px 17px;
 }
@@ -41,7 +41,8 @@ body {
     margin-bottom: 20px;
 }
 
-input {
+input,
+select {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -69,7 +70,8 @@ input {
     border: 2px solid #6750A4;
     border-radius: 5px;
     font-size: 16px;
-    margin-bottom: 10px; /* Added margin to separate buttons */
+    margin-bottom: 10px;
+    /* Added margin to separate buttons */
 }
 
 .Btn.download {
@@ -91,7 +93,7 @@ input {
     transition-duration: .3s;
 }
 
-h1 {
+h1, h4 {
     text-align: center;
     color: #6750A4;
 }
@@ -130,7 +132,8 @@ h1 {
 }
 
 .coolinput input[type=text].input,
-.coolinput input[type=number].input {
+.coolinput input[type=number].input,
+.coolinput select.input {
     padding: 10px;
     font-size: 0.75rem;
     border: 2px #6750A4 solid;
@@ -139,7 +142,8 @@ h1 {
 }
 
 .coolinput input[type=text].input:focus,
-.coolinput input[type=number].input:focus {
+.coolinput input[type=number].input:focus,
+.coolinput select.input:focus {
     outline: none;
 }
 
@@ -207,22 +211,22 @@ h1 {
     transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
 }
 
-#button-3 .checkbox:active + .knobs:before {
+#button-3 .checkbox:active+.knobs:before {
     width: 46px;
     border-radius: 100px;
 }
 
-#button-3 .checkbox:checked:active + .knobs:before {
+#button-3 .checkbox:checked:active+.knobs:before {
     margin-left: -26px;
 }
 
-#button-3 .checkbox:checked + .knobs:before {
+#button-3 .checkbox:checked+.knobs:before {
     content: "AC";
     left: 42px;
     background-color: #6750A4;
 }
 
-#button-3 .checkbox:checked ~ .layer {
+#button-3 .checkbox:checked~.layer {
     background-color: #F6EDFF;
 }
 
