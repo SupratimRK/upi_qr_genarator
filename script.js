@@ -66,7 +66,7 @@ function displayQRCode(qrText) {
         text: qrText,
         width: 300,
         height: 300,
-        colorDark: "#b1f202", // Set the dark color to #b1f202
+        colorDark: "#6750A4", // Set the dark color to #b1f202
         colorLight: "#fff",   // Set the light color to #fff
     });
 
