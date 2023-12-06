@@ -48,8 +48,8 @@ const banks = [
     ['Union Bank of India', 'UBIN0533654'],
     ['Unity Small Finance Bank Ltd', 'YESB0USB005'],
     ['YES Bank Ltd.', 'YESB0000001'],
-  ];
-  
+];
+
 
 
 function generateQRCode() {
@@ -99,13 +99,13 @@ function toggleInputsVisibility() {
 }
 
 function generateUPIQRText(upiId, amount) {
-    let qrText = 'upi://pay?pa=' + encodeURIComponent(upiId);
+    let qrText = 'upi://pay?pa=' + encodeURIComponent(upiId); qrText += '&tn='+ encodeURIComponent("Paid with UPIQR by Supratim");
 
     if (amount) {
         qrText += '&mc=yourMerchantCode'; // Replace with your merchant code
         qrText += '&tid=yourTransactionId'; // Replace with your transaction ID
         qrText += '&tr=yourTransactionRefId'; // Replace with your transaction reference ID
-        qrText += '&tn=Payment Description';
+        qrText += '&tn='+ encodeURIComponent("Paid with UPIQR by Supratim");
         qrText += '&am=' + encodeURIComponent(amount);
     }
 
@@ -120,7 +120,7 @@ function displayQRCode(qrText) {
         text: qrText,
         width: 300,
         height: 300,
-        colorDark: "#6750A4", // Set the dark color to #b1f202
+        colorDark: "#000", // Set the dark color to #b1f202
         colorLight: "#fff",   // Set the light color to #fff
     });
 
@@ -146,3 +146,27 @@ document.getElementById('toggleSwitch').addEventListener('change', toggleInputsV
 
 // Call toggleInputsVisibility on page load to set initial state
 toggleInputsVisibility();
+
+// Function to change the theme
+function changeTheme(primaryColor, backgroundColor, surfaceColor) {
+    document.documentElement.style.setProperty('--primary-color', primaryColor);
+    document.documentElement.style.setProperty('--background-color', backgroundColor);
+    document.documentElement.style.setProperty('--surface-color', surfaceColor);
+}
+
+// Randomly choose a theme on page load
+const themes = [
+    ['#6750A4', '#FFFFFF', '#EADDFF'],
+    ['#984061', '#FFFFFF', '#ffd9e2'],
+    ['#7e4895', '#FFFFFF', '#f7d8ff'],
+    ['#4c57a9', '#FFFFFF', '#dfe0ff'],
+    ['#006590', '#FFFFFF', '#c8e6ff'],
+    ['#00696c', '#FFFFFF', '#6ff6fb'],
+    ['#006d42', '#FFFFFF', '#93f7bb'],
+    ['#984061', '#FFFFFF', '#ffd9e2'],
+    // Add more themes as needed
+];
+
+
+const randomTheme = themes[Math.floor(Math.random() * themes.length)];
+changeTheme(...randomTheme);
