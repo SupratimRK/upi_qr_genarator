@@ -115,7 +115,7 @@ This project is licensed under the **MIT License**. Feel free to use, modify, an
 For questions or feedback, feel free to reach out:
 
 - **Email**: [supratimrk@outlook.com](mailto:supratimrk@outlook.com)
-- **GitHub**: [your-username](https://github.com/SupratimRK)
+- **GitHub**: [SupratimRK](https://github.com/SupratimRK)
 
 ---
 
